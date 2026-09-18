@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#01050a">
+<title>Felolvasó</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2301050a'/%3E%3Cpath d='M5 10v4M9 7v10M12 4v16M15 8v8M19 11v2' stroke='%2357c7ff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+  <header>
+    <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/></svg></div>
+    <div><h1>Felolvasó</h1><div class="sub">Magyar szövegfelolvasás · a böngésződben fut</div></div>
+    <div class="pill"><span class="dot" id="dot"></span><span id="stat">Indulás…</span></div>
+  </header>
+
+  <div class="card editor">
+    <textarea id="txt" maxlength="100000" placeholder="Írd vagy illeszd be ide a felolvasandó szöveget – vagy húzz ide egy .txt fájlt…" autofocus></textarea>
+    <div class="edfoot"><span id="cnt">0 / 100 000</span><span id="est"></span><span class="sp"></span>
+      <button class="ghost" id="open">Fájl megnyitása</button><input type="file" id="file" accept=".txt,.md,.text,.srt,text/plain" hidden><button class="ghost" id="paste">Beillesztés</button><button class="ghost" id="clr">Törlés</button></div>
+  </div>
+
+  <div class="grid">
+    <div class="card panel">
+      <div class="lbl">Hang</div>
+      <div class="voices" id="voices"></div>
+    </div>
+    <div class="card panel">
+      <div class="slider"><div class="lbl">Tempó <b id="tpv">1.00×</b></div>
+        <input type="range" id="tp" min="0.6" max="1.6" step="0.05" value="1"><div class="ticks"><span>lassú</span><span>gyors</span></div></div>
+      <div class="slider"><div class="lbl">Hangerő <b id="vlv">100%</b></div>
+        <input type="range" id="vl" min="0" max="150" step="5" value="100"><div class="ticks"><span>halk</span><span>hangos</span></div></div>
+    </div>
+  </div>
+
+  <button class="go" id="go"><span class="spin"></span><span id="goT">Felolvasás</span><kbd>Ctrl ↵</kbd>
+    <span class="bar" id="bar"></span></button>
+
+  <div class="card player" id="player">
+    <button class="pp" id="pp" aria-label="Lejátszás"></button>
+    <div class="wv"><canvas id="cv"></canvas><div class="tm"><span id="cur">0:00</span><span id="dur">0:00</span></div></div>
+    <a class="dl" id="dl" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Letöltés</a>
+  </div>
+
+  <div class="hist" id="hist" hidden><h2>Korábbiak ebben a munkamenetben</h2><div id="hl"></div></div>
+</div>
+<div class="toast" id="toast"></div>
+<script type="module" src="/main.js"></script>
+</body>
+</html>
