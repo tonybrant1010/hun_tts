@@ -2,9 +2,7 @@
 
 Böngészőben futó magyar szövegfelolvasó webapp. A szintézis a látogató gépén történik (Piper VITS modell, ONNX Runtime Web), szerver nem kell hozzá.
 
-## Teszt
-
-https://hun-tts.vercel.app/
+>Teszt - https://hun-tts.vercel.app/<
 
 - Hangok: Anna (női), Imre (férfi) – Piper `hu_HU` medium modellek, első használatkor egyszer töltődnek le (~63 MB), utána a böngésző tárolja
 - Tempó és hangerő állítása, letöltés WAV-ként
