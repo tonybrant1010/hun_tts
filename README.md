@@ -1,4 +1,4 @@
-# hun_tts – Magyar szövegfelolvasó
+# hun_tts – magyar szövegfelolvasó
 
 Böngészőben futó magyar szövegfelolvasó webapp. A szintézis a látogató gépén történik (Piper VITS modell, ONNX Runtime Web), szerver nem kell hozzá.
 
