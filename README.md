@@ -1,10 +1,13 @@
-# hun_tts – Magyar szövegfelolvasó
+# hun_tts – magyar szövegfelolvasó
 
 Böngészőben futó magyar szövegfelolvasó webapp. A szintézis a látogató gépén történik (Piper VITS modell, ONNX Runtime Web), szerver nem kell hozzá.
+
+![A hun_tts felülete](screenshot.jpg)
 
 - Hangok: Anna (női), Imre (férfi) – Piper `hu_HU` medium modellek, első használatkor egyszer töltődnek le (~63 MB), utána a böngésző tárolja
 - Tempó és hangerő állítása, letöltés WAV-ként
 - Szöveg beírása, beillesztése vagy `.txt` / `.md` fájl betöltése (UTF-8 és Windows-1250 kódolás), max. 100 000 karakter
+>Teszt - https://hun-tts.vercel.app/
 
 ## Futtatás
 
